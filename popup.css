@@ -1,0 +1,12 @@
+body {
+   width: 400px;
+   padding: 35px;
+   
+}
+.ext-logo {
+   height: 50px;
+}
+
+.title-holder {
+   display: flex;
+}

@@ -1,0 +1,48 @@
+{
+   "manifest_version": 2,
+   "name": "SharkHunter",
+   "version": "1.0.0",
+   "description": "Avoid professional players.",
+   "browser_action": {
+      "default_icon": {
+         "128": "/assets/icons/128.png",
+         "48": "/assets/icons/48.png",
+         "16": "/assets/icons/16.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "SharkHunter"
+   },
+   "icons": {
+      "128": "/assets/icons/128.png",
+      "48": "/assets/icons/48.png",
+      "16": "/assets/icons/16.png"
+   },
+   "background": {
+      "persistent": false,
+      "scripts": [
+         "scripts/eventPage.js"
+      ]
+   },
+   "content_scripts": [
+      {
+         "matches": [
+            "https://www.draftkings.com/lobby*"
+         ],
+         "js": [
+            "assets/jquery.min.js",
+            "scripts/contentScript.js"
+         ],
+         "css": [
+            "scripts/contentStyle.css"
+         ]
+      }
+   ],
+   "permissions": [
+      "tabs",
+      "storage",
+      "background",
+      "alarms",
+      "downloads",
+      "https://www.draftkings.com/lobby*"
+   ]
+}
